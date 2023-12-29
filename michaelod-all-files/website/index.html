@@ -1,105 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Resume/Project</a></li>
+        <li><a href="badges.html">Fun</a></li>
+        <li><a href="collapsible.html">Contact</a></li>
+      </ul>
+    </div>
+</nav>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #141212;
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            background-image: url('images/dark_sky.jpg');
-        }
-
-        .container {
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3em;
-            color: #3498db;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 40px;
-        }
-
-        .circle {
-            width: 100px;
-            height: 100px;
-            background-color: #0d0a46b1;
-            border-radius: 50%;
-            display: inline-block;
-            margin: 0 15px;
-            animation: bounce 1s infinite alternate;
-        }
-
-        .circle:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .circle:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes bounce {
-            to {
-                transform: translateY(-20px);
-            }
-        }
-
-        .sub_div {
-            position: absolute;
-            bottom: 0px;
-			font-size: 11px
-        }
-        p {
-            margin-left:110px;
-        }
-		.bottomright {
-			position: absolute;
-			bottom: 8px;
-			right: 16px;
-			font-size: 12px;
-		}
-
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-</nav>
+
 
 <body>
     <div class="container">
