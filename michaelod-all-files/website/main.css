@@ -10,7 +10,9 @@ body {
 	color: #333;
 	background-image: url('images/dark_sky.jpg');
 }
-
+.nav-wrapper{
+	position: fixed;
+}
 .container {
 	text-align: center;
 }
