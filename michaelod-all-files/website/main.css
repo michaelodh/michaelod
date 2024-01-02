@@ -9,17 +9,26 @@ body {
 	font-family: 'Arial', sans-serif;
 	color: #333;
 }
-.nav-wrapper{
+.navbar {
 	position: fixed;
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
 	overflow: hidden;
-	background-color: #333;
-	position: fixed;
+	background-color: #0d0c0c;
 	top: 0;
 	width: 100%;
+	float: left;
 }
+li {
+	float: left;
+}
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+  }
 .container {
 	text-align: center;
 }
