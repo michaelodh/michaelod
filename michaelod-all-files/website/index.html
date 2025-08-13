@@ -1,156 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<style>
-  body {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	background-color: #141212;
-	font-family: 'Arial', sans-serif;
-	color: #333;
-	margin: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #615ab1a5, #2c2530, #008cff, #00ccff);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-}
-
-nav {
-	background-color: #333;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-around;
-}
-li {
-    display: inline;
-}
-a {
-	display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-a:hover {
-    background-color: #555;
-}
-.container {
-	text-align: center;
-}
-
-h1 {
-	font-size: 3em;
-	color: #3498db;
-	margin-bottom: 20px;
-}
-
-p {
-	font-size: 1.2em;
-	color: #666;
-	margin-bottom: 40px;
-}
-
-.circle {
-	width: 100px;
-	height: 100px;
-	background-color: #0d0a46b1;
-	border-radius: 50%;
-	display: inline-block;
-	margin: 0 15px;
-	animation: bounce 1s infinite alternate;
-}
-
-.circle:nth-child(2) {
-	animation-delay: 0.2s;
-}
-
-.circle:nth-child(3) {
-	animation-delay: 0.4s;
-}
-
-
-@keyframes gradientAnimation {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-@keyframes bounce {
-	to {
-		transform: translateY(-20px);
-	}
-}
-
-.sub_div {
-	position: absolute;
-	bottom: 0px;
-	font-size: 11px
-}
-p {
-	margin-left:110px;
-}
-.bottomright {
-	position: absolute;
-	bottom: 8px;
-	right: 16px;
-	font-size: 12px;
-}
-</style>
-<nav>
-	<ul>
-        <li><a href="index.html" class="brand-logo">Home</a><li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="fun.html">Fun</a></li>
-        <li><a href="contact.html">Contact</a></li>
-	</ul>
-</nav>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>michaelod.com</title>
+    <title>Michael Odeh - Security Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #334155;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        nav a:hover {
+            color: #60a5fa;
+            background: rgba(96, 165, 250, 0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+        
+        .hero .description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #f1f5f9;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #60a5fa, #34d399);
+            margin: 1rem auto;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin: 0 auto;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+        
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .cert-badge {
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid #3b82f6;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #60a5fa;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid #334155;
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .skill-category h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #334155;
+            color: #cbd5e1;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .portfolio-item {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid #334155;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .portfolio-header {
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            padding: 1.5rem;
+            color: white;
+        }
+        
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60a5fa;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: rgba(30, 41, 59, 0.3);
+        }
+        
+        .contact-content {
+            text-align: center;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+        
+        .contact-link:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: #0f172a;
+            text-align: center;
+            padding: 2rem 0;
+            color: #64748b;
+            border-top: 1px solid #334155;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
-
-
 <body>
-	<div style="margin-top: 60px;">
-		<!-- More content... -->
-	</div>
-    <div class="container">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <p>Work in progress...lol</p>
-	</div>
-	<div class="sub_div">
-		<div class="counter-number"></div>
-	</div>
-		<div class="bottomright">Come back</div>
-	<script src="index.js"></script>
-</body>
+    <header>
+        <nav class="container">
+            <div class="logo">Michael Odeh</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Michael Odeh</h1>
+                <p class="subtitle">Cybersecurity Operations Engineer</p>
+                <p class="description">
+                    Protecting organizations through advanced threat detection, rapid incident response, 
+                    and continuous security monitoring. 5+ years defending against cyber threats.
+                </p>
+                <a href="#portfolio" class="cta-button">View My Work</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">👨‍💻</div>
+                    <div class="about-text">
+                        <p>
+                            Results-driven Cybersecurity Professional with deep expertise in Incident Detection and Response, SIEM and SOAR architecture, and enterprise security operations. Proven track record in designing and implementing end-to-end detection strategies, building automated response workflows, and tuning alerting pipelines to reduce noise and accelerate MTTR. Extensive experience securing cloud environments (AWS, GCP, Azure), managing EDR/XDR platforms, and performing threat investigations across hybrid infrastructures. Experienced in vulnerability management, IaC using Terraform, and aligning security operations with compliance frameworks such as PCI, HIPAA, HITRUST, and NIST. Strong communicator with a track record of driving cross-functional security initiatives in regulated, fast-paced organizations.
+                        </p>
+                        <p>
+                            Currently working as a Senior SOC Analyst at TechCorp, I've successfully reduced mean time to detection 
+                            by 40% and led response efforts for over 200 security incidents. I'm passionate about automation, 
+                            threat hunting, and sharing knowledge with the cybersecurity community.
+                        </p>
+                        <div class="certifications">
+                            <span class="cert-badge">GCIH</span>
+                            <span class="cert-badge">GCFA</span>
+                            <span class="cert-badge">Security+ CE</span>
+                            <span class="cert-badge">CySA+</span>
+                            <span class="cert-badge">CISSP (Associate)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>SIEM & Monitoring</h3>
+                        <ul class="skill-list">
+                            <li>Splunk Enterprise & Cloud</li>
+                            <li>IBM QRadar</li>
+                            <li>Microsoft Sentinel</li>
+                            <li>Chronicle SIEM</li>
+                            <li>ELK Stack</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Security Tools</h3>
+                        <ul class="skill-list">
+                            <li>CrowdStrike Falcon</li>
+                            <li>Carbon Black</li>
+                            <li>Phantom SOAR</li>
+                            <li>ThreatConnect</li>
+                            <li>Wireshark</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Programming & Automation</h3>
+                        <ul class="skill-list">
+                            <li>Python (pandas, requests)</li>
+                            <li>PowerShell</li>
+                            <li>Bash Scripting</li>
+                            <li>SQL</li>
+                            <li>REST APIs</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks & Methodologies</h3>
+                        <ul class="skill-list">
+                            <li>MITRE ATT&CK</li>
+                            <li>NIST IR Framework</li>
+                            <li>Kill Chain Analysis</li>
+                            <li>Diamond Model</li>
+                            <li>SANS FOR508</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">Portfolio</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="portfolio-header">
+                            <h3>Advanced Persistent Threat Response</h3>
+                        </div>
+                        <div class="portfolio-content">
+                            <p>Led incident response for sophisticated APT campaign targeting financial data. Coordinated containment across 50+ endpoints and implemented long-term monitoring.</p>
+                            <p><strong>Impact:</strong> Prevented data exfiltration, reduced dwell time by 75%</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Incident Response</span>
+                                <span class="tag">APT Analysis</span>
+                                <span class="tag">MITRE ATT&CK</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="portfolio-header">
+                            <h3>Automated Threat Detection System</h3>
+                        </div>
+                        <div class="portfolio-content">
+                            <p>Developed Python-based correlation engine that analyzes network flows and endpoint data to identify lateral movement patterns and C2 communications.</p>
+                            <p><strong>Results:</strong> 60% reduction in false positives, 30% faster detection</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Automation</span>
+                                <span class="tag">Threat Detection</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="portfolio-header">
+                            <h3>Ransomware Family Analysis</h3>
+                        </div>
+                        <div class="portfolio-content">
+                            <p>Comprehensive analysis of emerging ransomware variant including IOCs, TTPs, and defensive recommendations. Published findings to threat intelligence platform.</p>
+                            <p><strong>Impact:</strong> Enabled proactive blocking across enterprise</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Malware Analysis</span>
+                                <span class="tag">Threat Intel</span>
+                                <span class="tag">IOC Development</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="portfolio-header">
+                            <h3>SOC Playbook Automation</h3>
+                        </div>
+                        <div class="portfolio-content">
+                            <p>Created SOAR playbooks for common incident types including phishing, malware, and data loss prevention. Integrated with SIEM and ticketing systems.</p>
+                            <p><strong>Efficiency:</strong> 70% faster initial triage, consistent response quality</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">SOAR</span>
+                                <span class="tag">Process Improvement</span>
+                                <span class="tag">Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="portfolio-header">
+                            <h3>Threat Hunting Campaign</h3>
+                        </div>
+                        <div class="portfolio-content">
+                            <p>Proactive hunt for insider threat indicators using behavioral analytics and PowerShell analysis. Identified compromised privileged account.</p>
+                            <p><strong>Discovery:</strong> Prevented potential data breach, improved monitoring coverage</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Threat Hunting</span>
+                                <span class="tag">Behavioral Analysis</span>
+                                <span class="tag">PowerShell</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <div class="portfolio-header">
+                            <h3>Security Awareness Training</h3>
+                        </div>
+                        <div class="portfolio-content">
+                            <p>Developed and delivered cybersecurity training program focusing on phishing recognition and incident reporting for 500+ employees.</p>
+                            <p><strong>Results:</strong> 85% reduction in successful phishing attempts</p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Training</span>
+                                <span class="tag">Awareness</span>
+                                <span class="tag">Metrics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #cbd5e1;">
+                        Let's discuss cybersecurity opportunities, threat intelligence sharing, or collaboration on security projects.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:michaelodeh19@gmail.com" class="contact-link">
+                            📧 michaelodeh19@gmail.com
+                        </a>
+                        <a href="https://linkedin.com/in/michaelodeh" class="contact-link">
+                            💼 LinkedIn
+                        </a>
+                        <a href="https://github.com/michaelodeh" class="contact-link">
+                            🔗 GitHub
+                        </a>
+                        <a href="https://twitter.com/" class="contact-link">
+                            🐦 Twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Michael Odeh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+            }
+        });
+    </script>
+</body>
 </html>
